@@ -52,5 +52,10 @@ public class MainActivity extends AppCompatActivity implements Fragment1.Communi
     public void send(String nom) {
         TextView textView = findViewById(R.id.activityTextView);
         textView.setText(nom);
+        Fragment2 fragment2 = (Fragment2) getSupportFragmentManager().findFragmentById(R.id.fragment2);
+        if (fragment2 != null) {
+            fragment2.received(nom);
+        }
+
     }
 }
